@@ -1,8 +1,16 @@
 [gd_scene format=3 uid="uid://xgp5028p37q6"]
 
 [ext_resource type="Script" uid="uid://bgh4hksglksr4" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://ng8xe05x0i8u" path="res://the mona lisa.jpg" id="2_0xm2m"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ig7tw"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_h2yge"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1bvp3"]
+albedo_texture = ExtResource("2_0xm2m")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0xm2m"]
 
 [node name="Main" type="Node3D" unique_id=1727937391]
 script = ExtResource("1_ig7tw")
@@ -11,9 +19,18 @@ script = ExtResource("1_ig7tw")
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" unique_id=2109057917]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/XRCamera3D" unique_id=1315404690]
+[node name="the cube" type="MeshInstance3D" parent="XROrigin3D/XRCamera3D" unique_id=1315404690]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, -1)
 mesh = SubResource("BoxMesh_ig7tw")
+
+[node name="lisa" type="MeshInstance3D" parent="XROrigin3D/XRCamera3D" unique_id=489254892]
+transform = Transform3D(0.9967719, -0.080285914, 0, 0.035177395, 0.4367371, -0.89890116, 0.0721691, 0.8959994, 0.4381515, 1.3282115, -0.19412494, -3.7856107)
+mesh = SubResource("PlaneMesh_h2yge")
+surface_material_override/0 = SubResource("StandardMaterial3D_1bvp3")
+
+[node name="ground" type="MeshInstance3D" parent="XROrigin3D/XRCamera3D" unique_id=1040806346]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0)
+mesh = SubResource("PlaneMesh_0xm2m")
 
 [node name="LeftHand" type="XRController3D" parent="XROrigin3D" unique_id=1021593067]
 transform = Transform3D(0.9998083, 0.0088775, 0.01745174, -0.008726203, 0.9999238, -0.008726535, -0.017527882, 0.008572575, 0.9998096, -0.5, 1, -0.5)
