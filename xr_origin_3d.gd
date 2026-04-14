@@ -2,6 +2,7 @@ extends XROrigin3D
  
 @onready var camera = $XRCamera3D
 @onready var left_controller = $LeftHand
+@onready var right_controller = $RightHand
  
 var speed = 3.0   # movement speed (meters per second)
  
@@ -28,3 +29,9 @@ func _physics_process(delta):
  
 	# 6. Move the player (XROrigin3D)
 	global_position += direction * speed * delta
+
+	var turn_input = right_controller.get_vector2("primary").x
+	if turn_input > 0.8:
+		rotate_y(deg_to_rad(-30))
+	elif turn_input < -0.8:
+		rotate_y(deg_to_rad(30))	
