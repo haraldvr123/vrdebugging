@@ -37,6 +37,10 @@ func _ready():
 	else:
 		# We couldn't start OpenXR.
 		print("OpenXR not instantiated!")
+		if xr_interface:
+			print("no interface")
+		if xr_interface.initialize():
+			print("couldn't initalisze")	
 		get_tree().quit()
 
 # Handle OpenXR session ready
