@@ -31,7 +31,5 @@ func _physics_process(delta):
 	global_position += direction * speed * delta
 
 	var turn_input = right_controller.get_vector2("primary").x
-	if turn_input > 0.8:
-		rotate_y(deg_to_rad(-30))
-	elif turn_input < -0.8:
-		rotate_y(deg_to_rad(30))	
+	if abs(turn_input)>0.2:
+		rotate_y(-turn_input * 2.0 * delta)
