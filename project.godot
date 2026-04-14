@@ -15,6 +15,11 @@ run/main_scene="uid://xgp5028p37q6"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+XRToolsUserSettings="*uid://bqgb8i74tm0t"
+XRToolsRumbleManager="*uid://by853dk86g1qw"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
