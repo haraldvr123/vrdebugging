@@ -2,3 +2,5 @@
 just some funny vr stuff
 
 3D models from the very kind people:
+Knight by Dawid2K [CC-BY] (https://creativecommons.org/licenses/by/3.0/) via Poly Pizza (https://poly.pizza/m/isC73B8SKq)
+Sword by Quaternius (https://poly.pizza/m/9lLmH8Et4K)
